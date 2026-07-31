@@ -1,0 +1,150 @@
+title: "Quantization — The Complete Guide"
+description: "From the Affine Map to the Accelerator: how deep networks are compressed into integers, why it works, when it breaks, and what actually runs faster. CNNs and LLMs, calibration through kernels."
+baseurl: "/quantization"
+url: "https://karam-nus.github.io"
+
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: "highlight"
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+
+plugins:
+  - jekyll-relative-links
+
+relative_links:
+  enabled: true
+  collections: false
+
+include:
+  - README.md
+
+navigation:
+  - title: "Home"
+    url: "/"
+  - title: "00 — Grand Overview"
+    url: "/00_grand_overview"
+  - title: "01 — Hardware & the Q/DQ Contract"
+    url: "/01_hardware_and_the_qdq_contract"
+  - title: "02 — Number Formats & Bit Layouts"
+    url: "/02_number_formats"
+  - title: "03 — The Quantization Formula"
+    url: "/03_the_quantization_formula"
+  - title: "04 — Granularity"
+    url: "/04_granularity"
+  - title: "05 — Q/DQ in the Graph"
+    url: "/05_graph_representation"
+  - title: "06 — Calibration"
+    url: "/06_calibration"
+  - title: "07 — Choosing the Targets"
+    url: "/07_what_to_quantize"
+  - title: "08 — Beyond PTQ vs QAT"
+    url: "/08_method_taxonomy"
+  - title: "09 — Dynamic vs Static"
+    url: "/09_dynamic_vs_static"
+  - title: "10 — Data-Free Quantization"
+    url: "/10_data_free_quantization"
+  - title: "11 — Reconstruction PTQ"
+    url: "/11_reconstruction_ptq"
+  - title: "12 — QAT Foundations"
+    url: "/12_qat_foundations"
+  - title: "13 — Quantization-Aware Distillation"
+    url: "/13_quantization_aware_distillation"
+  - title: "14 — Mixed Precision & Bit Search"
+    url: "/14_mixed_precision_search"
+  - title: "15 — The Outlier Problem"
+    url: "/15_outliers"
+  - title: "16 — Non-Uniform & Codebook"
+    url: "/16_nonuniform_and_codebook"
+  - title: "17 — CNN Quantization Anatomy"
+    url: "/17_cnn_quantization_anatomy"
+  - title: "18 — CNN PTQ Practice"
+    url: "/18_cnn_ptq_practice"
+  - title: "19 — CNN QAT Practice"
+    url: "/19_cnn_qat_practice"
+  - title: "20 — Detection & Dense Prediction"
+    url: "/20_detection_and_dense_prediction"
+  - title: "21 — Vision Transformers"
+    url: "/21_vision_transformers"
+  - title: "22 — Why LLMs Differ"
+    url: "/22_why_llms_differ"
+  - title: "23 — Weight-Only Baselines"
+    url: "/23_weight_only_baselines"
+  - title: "24 — GPTQ"
+    url: "/24_gptq"
+  - title: "25 — AWQ"
+    url: "/25_awq"
+  - title: "26 — SmoothQuant"
+    url: "/26_smoothquant"
+  - title: "27 — Rotation & Incoherence"
+    url: "/27_rotation_methods"
+  - title: "28 — W4A8 & Full-Stack"
+    url: "/28_w4a8_and_fullstack"
+  - title: "29 — FP8 & FP4"
+    url: "/29_fp8_and_fp4"
+  - title: "30 — 2-Bit and Below"
+    url: "/30_extreme_low_bit"
+  - title: "31 — KV-Cache Quantization"
+    url: "/31_kv_cache_quantization"
+  - title: "32 — Quantized Fine-Tuning"
+    url: "/32_quantized_finetuning"
+  - title: "33 — MoE, SSMs & Multimodal"
+    url: "/33_moe_ssm_multimodal"
+  - title: "34 — LLM Methods on CNNs"
+    url: "/34_cross_pollination"
+  - title: "35 — GGUF I: Blocks"
+    url: "/35_gguf_part1"
+  - title: "36 — GGUF II: K/I-Quants"
+    url: "/36_gguf_part2"
+  - title: "37 — Every Other Format"
+    url: "/37_other_formats"
+  - title: "38 — PyTorch Quantization"
+    url: "/38_pytorch_quantization"
+  - title: "39 — Deployment Toolchains"
+    url: "/39_deployment_toolchains"
+  - title: "40 — LLM Serving Stacks"
+    url: "/40_llm_serving_stacks"
+  - title: "41 — Quantized Kernels"
+    url: "/41_quantized_kernels"
+  - title: "42 — Hands-On: CNN PTQ"
+    url: "/42_handson_cnn_ptq"
+  - title: "43 — Hands-On: Export & Deploy"
+    url: "/43_handson_export_and_deploy"
+  - title: "44 — Hands-On: QAT"
+    url: "/44_handson_qat"
+  - title: "45 — Hands-On: LLM"
+    url: "/45_handson_llm"
+  - title: "46 — Hands-On: GGUF"
+    url: "/46_handson_gguf"
+  - title: "47 — Debugging Playbook"
+    url: "/47_debugging_playbook"
+  - title: "48 — Evaluating Quantized Models"
+    url: "/48_evaluating_quantized_models"
+  - title: "49 — The Decision Guide"
+    url: "/49_decision_guide"
+  - title: "Appendix A — Glossary"
+    url: "/appendix_a_glossary"
+  - title: "Appendix B — Math Reference"
+    url: "/appendix_b_math"
+  - title: "Appendix C — Method Index"
+    url: "/appendix_c_method_index"
+  - title: "Appendix D — Hardware Matrix"
+    url: "/appendix_d_hardware_matrix"
+  - title: "Appendix E — Bibliography"
+    url: "/appendix_e_bibliography"
+  - title: "Authoring Prompt"
+    url: "/PROMPT"
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
