@@ -41,7 +41,7 @@
       <nav class="sidebar-nav">
         {% for item in site.navigation %}
           <a href="{{ item.url | relative_url }}"
-             class="nav-item{% if page.url == item.url or page.url == item.url | append: '/' %} active{% elsif page.url contains item.url and item.url != '/' %} active{% endif %}">
+             class="nav-item{% assign item_slash = item.url | append: '/' %}{% if page.url == item.url or page.url == item_slash %} active{% elsif page.url contains item.url and item.url != '/' %} active{% endif %}">
             {{ item.title }}
           </a>
         {% endfor %}
